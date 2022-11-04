@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+body{
+    font-family: 'montserrat','Times New Romans';
+}
+
+nav{
+    display: inline-block;
+    color: rgb(126, 141, 141);
+    background-color: #0082e6;
+    height: 80px; /*height of navigation bar*/
+    width: 100%; /*width of navigation bar*/
+}
+
+label.logo{
+    color: rgb(177, 174, 174);
+    font-size: 35px; 
+    line-height: 80px; /*sets space between [top of page, logo and nav links] */
+    padding: 0 80px; /*80px from the left and right*/
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+nav ul{
+    float: right;
+    margin-right: 40px; /* moves the nav links to the left*/
+}
+
+nav ul li{
+    display: inline-block;
+    line-height: 80px; /*sets space between [top of page and nav links] texts */
+    margin: 0 5px; /*sets margin space between [Nav links] */
+}
+
+nav ul li a{
+    color: white;
+    font-size: 20px;
+    text-transform: uppercase;
+    border-radius: 3px;
+    padding: 7px 13px; /*padding of links*/
+}
+
+a.active,a:hover{
+    background:#1b9bff;
+    transition: all 0.5s;
+}
+
+.checkbtn{
+    font-size: 30px; /*size of hamburger icon*/
+    color:  rgb(177, 174, 174);  /*color of hamburger icon*/
+    float: right; /*position of hamburger icon[Right side of page]*/
+    line-height: 80px; /*setting the height of hamburger icon to align with Logo of page */
+    margin-right: 40px; /*moving hamburger icon slightly to the left*/
+    cursor: pointer;
+    display: none; /*hides Hamburger icon/menu*/
+    /*on the click of the Hamburger icon/menu the checkbox ticks*/
+}
+
+#check{
+    display: none; /*hides check button*/
+}
+
+@media (max-width:952px) {
+    label.logo{ /*style all label with class logo*/
+        font-size: 30px;
+        padding-left: 50px; /*moving logo to left of page*/
+        cursor: pointer;
+    } 
+
+    nav ul li a{
+        font-size: 16px;
+    }
+}
+@media (max-width:858px) {
+       .checkbtn{
+        display: block; /*displays hamburger in block form*/
+        }
+
+    ul{
+        position: fixed; /*makes the position of the nav links fixed*/
+        width: 100%; /*allows the navbar fill the entire screen*/
+        height: 100vh; /*allows the navbar fill the entire page*/
+        background: #2c3e50;
+        top: 80px; /*formats arrangement of nav links*/
+        left: -100%; /*moves navbar to 'unseen/hidden' left side of page until hamburger icon is clicked*/
+        text-align: center; /*moves navbar to center of page*/
+        transition: .5s;
+    }
+    nav ul li{
+        display: block; /*arranges links in block form*/
+    }
+
+    nav ul li a{
+        font-size: 20px;
+    }
+    a:hover, a.active{
+        background: none; /*removes background of nav links on active and hover*/
+        color:#0082e6 ;
+    }
+    #check:checked ~ ul{ /*using selector to choose the 'check- checkbutton' and navbar to be dsiplayed on the page once clicked and vice versa*/
+        left: 0;
+    }
+}
+
+    section{
+        background-image: url(/images/bg.jpg);
+        background-size: cover;
+        height: calc(100vh - 80px); /*calculation of viewheight minus the [80px] height of navlink from top of page*/
+    } 
+
+
